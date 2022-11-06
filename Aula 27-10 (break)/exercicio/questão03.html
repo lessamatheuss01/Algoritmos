@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>questão 03</title>
+</head>
+<body>
+    <button onclick="ver()">Ver minha sorte</button>
+    <div id="div_mensagem"></div>
+    <div id="div_img"></div>
+</body>
+</html>
+<script>
+    function ver(){
+        var carta = 0;
+        var coracao = 0;
+        var img = '';
+        var jogo;
+        var amor = 1;
+
+        while (amor <= 21){
+            jogo = Math.random()
+
+            if(jogo < 0.5){
+                div_img.innerHTML += `<img src="https://www.imagensempng.com.br/wp-content/uploads/2021/07/Coracao-Png-1024x1024.png" width="100px">`
+                coracao++
+            }else {
+                div_img.innerHTML += `<img src="https://images.vexels.com/media/users/3/136174/isolated/preview/c1c55e11a2047b61373a0ac0410611e3-coracao-de-cartas.png" width="100px">`
+                carta++
+            }
+
+            if(coracao > 11 || carta > 11){
+                break
+            }
+        }
+
+        if(coracao > carta){
+            div_mensagem.innerHTML = 'Você tem mais sorte no amo'
+        }else {
+            div_mensagem.innerHTML = 'Você tem mais sorte no amo'
+        }
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Financiamento do carro</h2>
+    Qual o valor do carro a vista? <input type="text" id="in_valor"><br>
+    Qual a taxa de juros ao mês? <input type="text" id="in_juros"><br>
+    Qual quantidade de parcelas? <input type="text" id="in_parcelas"><br>
+
+    <button onclick="compra()">Calcular préju</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function compra() {
+        var valor = Number (in_valor.value)
+        var juros = Number (in_juros.value)
+        var parcelas = Number (in_parcelas.value)
+        var primeiro = valor / parcelas
+        var segundo = 1 + juros / 100
+
+        var financiamento = primeiro * ((segundo ** parcelas) - 1) / (segundo - 1)
+        var precomes = valor * 0.8
+
+        var carroscomprados = financiamento / valor
+        div_resultado.innerHTML = `Seu carro vai sair por um total de R$${financiamento}. Após 1 mês, ele já vai valer só R$${precomes}. 
+        Porque comprou financiado, vai pagar o correspondente ${carroscomprados} carros`
+    }
+</script>

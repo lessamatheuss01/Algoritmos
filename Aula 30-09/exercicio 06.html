@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>CUPONS</h4>
+    <input placeholder="Qual o produto" id="in_produto">
+    <input placeholder="Qual o preço" id="in_preco">
+    <input placeholder="Cupom" id="in_cupom">
+
+    <button onclick="aplicar()">Aplicar o desconto</button>
+
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function aplicar() {
+        var produto = in_produto.value
+        var preco = Number(in_preco.value)
+        var cupom = in_cupom.value
+        var desconto01 = preco * 0.10
+        var desconto02 = preco * 0.19
+
+        if(produto == ""){
+            alert(`Insira um produto para prosseguir`)
+        }else if(preco == ""){
+            alert(`Insira um preço para prosseguir`)
+        }else if (cupom == ""){
+            alert(`Insira um cupom para prosseguir`)
+        }else if (produto =="tenis" || produto =="livro" || produto =="material escolar" && cupom =="GERAL_10") {
+            div_resultado.innerHTML = `Cupom para produtos em geral aplicado! Preço final será de R$ ${desconto01.toFixed(2)}`
+
+        } else if (produto =="celular" || produto =="notebook" || produto =="tablet" && cupom =="TECH_19") {
+            div_resultado.innerHTML = `Cupom para produtos tecnológicos aplicado! Preço final será de R$ ${desconto02.toFixed(2)}`
+        }else {
+            div_resultado.innerHTML = `Cupom não aplicado, tente novamente`
+        }
+    }
+</script>

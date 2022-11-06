@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>q01</title>
+</head>
+<body>
+    <h2>Número da sorte</h2>
+    <input placeholder="Qual número?" 
+    id="in_numero">
+    <button onclick="sortear()">
+        Testar minha sorte
+    </button>
+    <br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function sortear() {
+        var numero = Number(in_numero.value)
+        console.log(`Número digitado: ${numero}`)
+
+        if (numero < 0 || numero > 100) {
+            alert("Digite de 0 a 100")
+        } else {
+            var sorteios = 0
+            var tem_sorte = false
+
+            while (sorteios < 20) {
+                var sorteado = parseInt(Math.random * 101)
+                sorteios++
+                console.log(`${sorteios}o. sorteio - sorteado: ${sorteado}`);
+
+                tem_sorte = sorteado == numero
+                if (tem_sorte) {
+                    div_mensagem.innerHTML = `Muito bem, você é uma pessoa de sorte! Seu número saiu no ${sorteios}º sorteio`
+                    break
+                } 
+            }
+            if (!tem_sorte) {
+                div_mensagem.innerHTML = "É, você não tem muita sorte em sorteios, pelo visto" 
+            }
+        }
+    }
+</script>

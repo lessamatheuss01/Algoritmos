@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Pokemon</h4>
+
+    <select id="sel_treinador01">
+        <option value="">Escolhe</option>
+        <option value="01">Planta</option>
+        <option value="02">Água</option>
+        <option value="03">Fogo</option>
+    </select>
+
+    <select id="sel_treinador02">
+        <option value="">Escolhe</option>
+        <option value="01">Planta</option>
+        <option value="02">Água</option>
+        <option value="03">Fogo</option>
+    </select>
+
+    <button onclick="batalhar()">Batalha</button>
+
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+     var total = 0;
+        var derrotas = 0;
+        var empates = 0;
+
+
+    function batalhar() {
+        var pokemon01 = sel_treinador01.value
+        var pokemon02 = sel_treinador02.value
+
+        if(pokemon01 == pokemon02){
+            empates += 1;
+        }else if(pokemon01 == '01' && pokemon02 == '02' || pokemon01 == '02' && pokemon02 == '03' || pokemon01 == '03' && pokemon02 == '01'){
+            total += 1;
+        }else if(pokemon01 == "01" && pokemon01 == "02" || pokemon02 == "02" && pokemon01 == "03" || pokemon02 == "03" && pokemon01 == "01"){
+            derrotas += 1;
+        }
+
+        div_resultado.innerHTML = `A batalha empatou`
+        div_resultado.innerHTML = `O iniciante venceu!`
+        div_resultado.innerHTML = `O iniciante perdeu!`
+        div_resultado.innerHTML = `Vitórias do iniciante ${total} <br> Derrotas do iniciante: ${derrotas} <br> Empates: ${empates}`
+    }
+</script>

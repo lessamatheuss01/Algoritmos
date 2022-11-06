@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 18/08 - q01</title>
+</head>
+<body>
+    <h2>Meu querido diário</h2>
+
+    Digite uma memória pro seu diário: <br>
+    <input id="in_memoria">
+    <button onclick="registrar()">
+        Registrar memória
+    </button>
+    <br><br>
+    <div id="div_memorias">
+        Memórias: <br>
+    </div>
+</body>
+</html>
+<script>
+function registrar() {
+    div_memorias.innerHTML += `${in_memoria.value}<br>` 
+    //div_memorias.innerHTML += in_memoria.value+'<br>'
+    
+    // limpando o que está digitado na input
+    in_memoria.value = ''
+}
+</script>

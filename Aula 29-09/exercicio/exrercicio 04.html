@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Idade: <input placeholder="Informe a idade" id="in_idade" onkeyup="avaliar()">
+
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    var total = 0 
+    function avaliar() {
+        var idade = Number (in_idade.value)
+        var infancia = idade > 12;
+        var adolescencia = idade > 18;
+        var idoso = idade > 65;
+
+        if(infancia) {
+            total += 10
+        }
+        if(adolescencia) {
+            total += 20
+        }
+        if(idoso) {
+            total += 50
+        }
+    
+        div_resultado.innerHTML = `Já passou pela infância ${infancia}<br>`
+        div_resultado.innerHTML += `Já passou pela adolescência ${adolescencia}<br>`
+        div_resultado.innerHTML += `Já é um idoso ${idoso}`
+        div_resultado.innerHTML += `<br>Total de pontos ${total}`
+    }
+</script>

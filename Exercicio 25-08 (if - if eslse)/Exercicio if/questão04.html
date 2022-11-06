@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 4</title>
+</head>
+<body>
+    <h2> Pedindo pizza</h2>
+    Valor da pizza: <input type="text" id="in_valor"> <br>
+    Quantidade de amigos: <input type="text" id="in_quantidade"> <br>
+
+    <button onclick="pedir()">Rola a pizza ?</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function pedir() {
+        var valor = Number(in_valor.value)
+        var amigos = Number(in_quantidade.value)
+
+        var pizza = (valor / amigos)
+        div_resultado.innerHTML = `Cada amigo vai pagar R$ ${pizza} pela pizza`
+
+        if (pizza > 20) {
+            div_resultado.innerHTML += `<i><b><spam style ="color: green"> <br> Deu ruim! Pizza muito cara</spam><b><i>`
+        }
+    }
+</script>

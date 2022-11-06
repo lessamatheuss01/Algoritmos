@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Sorveteria Ipiranga</h2>
+    Valor por grama do sorvete: <input type="text" id="in_valor"><br>
+    Qual o peso do sorvete? <input type="text" id="in_peso"><br>
+
+    <button onclick="compra()">Finalizar compra</button>
+</body>
+</html>
+
+<script>
+    function compra() {
+        var valor = Number (in_valor.value)
+        var peso = Number (in_peso.value)
+        var resultado = valor * peso
+
+        if(resultado > 10) {
+            alert(`Esse sorvete vai comprometer a mesada`)
+        } else {
+            alert (`Hoje você está maneirando...`)
+        }
+    }
+</script>

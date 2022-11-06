@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha 1a página HTML</title>
+</head>
+<body>
+    Meu 1o HTML! #Aísim  
+    <br>
+    <button onclick="cumprimentar()">Receber um cumprimento</button>
+    <br>
+<!-- 
+onclick -> indica qual instrução JS será executada quando clicarmos no botão    
+ -->    
+    <button onclick="elogiar()">Fazer elogios</button>
+    <br><br><br>
+    <button onclick="despedir()">Despedida</button>
+
+</body>
+</html>
+
+<script>
+    // eu S2 programar! -> isto é um COMENTÁRIO 
+    // comentário de uma linha
+    /*
+    Este é um comentário de
+    várias linhas
+    p/ longos comentários e tal
+    */
+
+// o alert() exibe uma mensagem de alerta no navegador
+// usando o valor entre parênteses 
+// esta instrução, como está direto na tag <script>
+// será executada imediatamente quando abrirmos a página
+    alert('Meu JS na página! |o|')
+
+/*
+Aqui nós CRIAMO uma função chamada 'cumprimentar'
+Ou seja, nós "ensinamos" o JS a fazer uma coisa nova
+Para que ela seja invocada (excutada), temos que
+por o par de parênteses após seu nome
+ex: cumprimentar()
+*/    
+    function cumprimentar() {
+        alert('Sejam bem vindos!')
+        alert('Sou um(a) dev iniciante')
+    }
+// podemos ter várias funções 
+    
+    function elogiar() {
+        alert('Você é D+')
+        alert('Nas curvas do teu corpo capotei meu S2')
+    }
+
+    function despedir() {
+        alert('Até mais! Bye!')
+    }
+
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="sel_filme">
+        <option value="01">Marvel</option>
+        <option value="02">DC</option>
+    </select>
+    <button onclick="ver()">Ver programação semanal na TV</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function ver(){
+        var filme = Number(sel_filme.value);
+        var programacao = 1;
+        var tv = '';
+
+        while (true){
+            tv = parseInt(1+ Math.random() * 2)
+            console.log(`${programacao}° - sorteado foi ${tv}`)
+
+            if(tv == filme){
+                div_mensagem.innerHTML = `Você verá um filme que gosta no ${programacao}º dia`
+                break
+            }
+            if(programacao == 5){
+                div_mensagem.innerHTML = `É, ou lê um livro ou assiste um filme que não gosta mesmo`
+                break
+            }
+            programacao++
+        }
+    }
+</script>

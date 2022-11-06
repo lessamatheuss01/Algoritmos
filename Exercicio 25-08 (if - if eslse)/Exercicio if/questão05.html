@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Quantidade de luz em KWH</h2>
+    Quantidade de kWh por mês: <input type="text" id="in_mes">
+
+    <button onclick="luz()">Calcular conta de luz</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function luz() {
+        var qunatidade = Number(in_mes.value)
+        if (quantidade * 0.85) {
+            div_resultado.innerHTML = `Sua conta no mês é ${quantidade}`
+        }
+
+        if (quantidade < 0.01 ) {
+            alert (`Valor da sua conta é R$ ${quantidade}`)
+        }
+    }
+</script>

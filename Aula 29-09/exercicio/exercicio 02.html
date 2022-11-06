@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   Altura: <input placeholder="Informe sua alura" id="in_altura">
+
+   <button onclick="analisar()">Analisar</button>
+   <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function analisar() {
+        var altura = Number (in_altura.value)
+        var piloto = altura < 1.60
+        var valejador = altura >= 1.60
+        var jogador = altura >= 1.85
+        
+
+        if(piloto) {
+            div_resultado.innerHTML = 'Pode tentar ser piloto(a)de corrida'
+        }
+        if(valejador) {
+            div_resultado.innerHTML = 'Pode tentar ser jogador(a) de futebol ou handbol'
+        }else if(jogador) {
+            div_resultado.innerHTML = 'Pode tentar ser velejador'
+        }
+        
+        
+    }
+</script>

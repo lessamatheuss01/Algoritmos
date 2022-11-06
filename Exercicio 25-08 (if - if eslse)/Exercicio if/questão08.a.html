@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Controlador de peso no elevador</h2>
+    Quantidade de homem <input type="text" id="in_homem"> <br>
+    Quantidade de mulher <input type="text" id="in_mulher"> <br>
+
+    <button onclick="quantidade()">Analisar o peso</button>
+    <div id="div_calculo"></div>
+</body>
+</html>
+
+<script>
+    function quantidade() {
+        var homem = Number(in_homem.value)
+        var mulher = Number(in_mulher.value)
+        
+        var resultado = (homem * 80) + (mulher * 60)
+        div_calculo.innerHTML = `Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${resultado} kg `
+
+        if(resultado > 800) {
+            div_calculo.innerHTML = `<span style ="color: blue;"> Será necessário descer alguém para que o elevador se movimente </span> `
+        }
+        
+        if(resultado < 1000) {
+            div_calculo.innerHTML = `<span style ="color: blue;"> Será necessário descer alguém para que o elevador se movimente </span> `
+        }
+
+        if(resultado > 1000) {
+            div_calculo.innerHTML = `<span style ="color: red;"> Será necessário descer alguém para que o elevador se movimente </span> `
+        }
+    }
+</script>

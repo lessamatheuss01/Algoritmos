@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 1</title>
+</head>
+<body>
+
+<!-- 
+Nos "id" devemos evitar caracteres especiais
+acentos, cedilha, hifen
+E NÃO devemos usa espaços em branco.
+Ao invés devemos usar "_" 
+ex: in_data_nascimento
+ -->    
+    Nome da linha de ônibus
+    <input id="in_onibus">
+    <br><br>
+    Tempo da viagem
+    <input id="in_horas">
+    <br><br>
+    <button onclick="registrar_viagem()">Registar viagem</button>
+</body>
+</html>
+<script>
+/*
+Nos nomes de funções devemos evitar caracteres especiais
+acentos, cedilha, hifen
+E NÃO devemos usa espaços em branco.
+Ao invés devemos usar "_" 
+ex: cadastrar_data_nascimento
+*/    
+    function registrar_viagem() {
+        alert("Registrando sua linha de ônibus")
+        alert(in_onibus.value)
+        alert("Registrando o tempo da viagem")
+        alert(in_horas.value)
+    }
+</script>
+
+
+

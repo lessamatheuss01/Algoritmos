@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Auxilio de um banco em cheque especial</h2>
+    Qual o seu saldo da conta ? <input type="text" id="in_conta"> <br>
+    Qual será o valor do débito ? <input type="text" id="in_debito"> <br>
+
+    <button onclick="analise()">Analisar conta</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function analise() {
+        var conta = Number(in_conta.value)
+        var debito = Number(in_debito.value)
+
+        var analise = conta - debito
+
+        if (analise < 100) {
+            div_resultado.innerHTML += `<b style ="color: red;"> O saldo atual da conta corrente é ${analise} <b>`
+        }
+    }
+</script>

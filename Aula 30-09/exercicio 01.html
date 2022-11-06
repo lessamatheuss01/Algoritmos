@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="sel_arroz">
+        <option value="01">Branco</option>
+        <option value="02">Integral</option>
+    </select>
+
+    <input placeholder="Em quantos minutos" id="in_cozinhamento">
+
+    <input placeholder="Quantidade de sal" id="in_sal">
+
+    <button onclick="avaliar()">Avaliar Arroz</button>
+
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function avaliar() {
+        var arroz = sel_arroz.value
+        var cozinhamento = Number(in_cozinhamento.value)
+        var sal = Number (in_sal.value)
+
+        if((arroz == 01 && cozinhamento == 10 && sal <= 10) || (arroz == 02 && cozinhamento == 20 && sal <= 15) ){
+            div_resultado.innerHTML = 'Arroz perfeito <br>'
+
+            if(arroz == 01) {
+                div_resultado.innerHTML += `<img src="https://st2.depositphotos.com/3935465/7272/i/600/depositphotos_72729279-stock-photo-white-rice-in-bowl.jpg">`
+            }
+
+            if (arroz == 02) {
+                div_resultado.innerHTML += `<img src="https://img.itdg.com.br/tdg/images/recipes/000/114/954/44015/44015_original.jpg?mode=crop&width=710&height=400">`
+            }
+        }
+        else {
+            div_resultado.innerHTML = `<img src="https://noticiasdatv.uol.com.br/media/_versions/artigos/band-pesadelo-na-cozinha-erick-jacquin-reproducao-4-2_fixed_large.jpg">`
+        }
+    }
+</script>

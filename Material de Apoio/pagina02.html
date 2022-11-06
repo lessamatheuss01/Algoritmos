@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2a. página HTML + JS</title>
+</head>
+<body>
+    Fale me de seu(ua) herói(ina) favorito(a)<br>
+
+<!--
+A tag <input> gera um campo de entrada de valores    
+-->
+
+    Nome: <input id="in_heroi"> <br>
+    Poder: <input id="in_poder"> <br>
+    <button onclick="cadastrar()">Cadastrar</button>
+
+</body>
+</html>
+
+<script>
+
+    function cadastrar() {
+        alert("Cadastrando herói")
+// in_heroi.value -> pega o que está digitado na <input id="in_heroi"> 
+        alert(in_heroi.value)
+// in_poder.value -> pega o que está digitado na <input id="in_poder">         
+        alert(in_poder.value)
+    }
+
+</script>
+
+
+
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Peso do elevador</h2>
+   Qual o peso do Homem ? <input type="text" id="in_homem">
+   Qual o peso da Mulher ? <input type="text" id="in_mulher">
+
+   <button onclick="ligar()">Ligar elevador</button>
+   <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function ligar() {
+        var homem = Number(in_homem.value)
+        var mulher = Number(in_mulher.value)
+        
+        var resultado = (homem + mulher) / 2
+
+        if(resultado < 500) {
+            div_resultado.innerHTML = `<span style ="color: green;">Elevador vai se mover, pois está com ${resultado} Kg</span>`
+        }
+        else {
+            div_resultado.innerHTML = `<span style ="color: red;">Alguém precisa descer. Precisa perder ${resultado} Kg para mover o elevador</span>`
+        }
+        
+    }
+</script>

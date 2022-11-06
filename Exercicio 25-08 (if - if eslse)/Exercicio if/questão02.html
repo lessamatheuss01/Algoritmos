@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 02</title>
+</head>
+<body>
+    <h2>Amin Tiroso consome de refrigerante</h2>
+    
+    Quantas latinhas você bebe por dia? <input type="text" id="in_latinha">
+    <br>
+    <button onclick="refris()">Quantos refris</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function refris() {
+        var lata = Number(in_latinha.value)
+        if (lata * 365) {
+            lata = lata * 365
+        }
+        div_resultado.innerHTML =  `Você consumiu ${lata}`
+
+        if (lata > 500) {
+
+        }
+        div_resultado.innerHTML += ` Cuidado com a diabetes! ${lata}`
+    }
+</script>

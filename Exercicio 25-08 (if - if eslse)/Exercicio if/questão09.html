@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Streaming</h2>
+    Qual foi a sua última série (SITCOM) ? <input type="text" id="in_serie"> <br>
+    Qual o total de episódios você ja assitiu ? <input type="text" id="in_episodios"> <br>
+
+    <button onclick="nivel()">"Verificar nível</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function nivel() {
+        var serie = (in_serie.value)
+        var episodios = Number(in_episodios.value)
+
+        var resultado = ( episodios * 22 ) / 60
+
+        div_resultado.innerHTML = `Vejo que você gosta da série ${serie}`
+
+        if (resultado > 30 ) {
+            div_resultado.innerHTML += `<br> Uau, você realmente gosta dessa série!`
+        }
+    }
+</script>

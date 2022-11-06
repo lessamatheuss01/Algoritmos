@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Mercado Bom Doce</h2>
+    Qual quantidade de chocolate você quer comprar ? <input type="text" id="in_qtd">
+
+    <button onclick="analisar()">Comprar</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function analisar() {
+    var quantidades = Number(in_qtd.value)
+    var Normal = quantidades * 3
+    var Promocao = quantidades * 2.50
+
+    if (quantidades < 12) {
+    div_resultado.innerHTML = `o valor da sua compra foi de ${Normal}`
+    } else {
+        div_resultado.innerHTML = `o valor da sua compra foi de ${Promocao}`
+    }
+}
+</script>

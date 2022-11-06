@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Sorveteria Ipiranga</h2>
+    Valor por grama do sorvete: <input type="text" id="in_valor"><br>
+    Qual o peso do sorvete? <input type="text" id="in_peso"><br>
+    Qual tipo de cobertura? <input type="text" id="in_cobertura"><br>
+    Qual o sabor do sorvete? <input type="text" id="in_tipo">
+
+    <button onclick="compra()">Finalizar compra</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function compra() {
+        var valor = Number (in_valor.value)
+        var peso = Number (in_peso.value)
+        var cobertura = in_cobertura.value
+        var tipo = in_tipo.value
+        var precoFinal
+
+        if (tipo == 'G') {
+            precofinal = (peso * (valor * 0.11))
+        } else {
+            precofinal = (peso * (valor * 0.9))
+        }
+
+        if ( cobertura != 'C') {
+            precofinal = (precofinal + (peso * 0.01))
+        }
+
+        if (precofinal > 10) {
+            div_resultado.innerHTML = (`<spam style ="color: green;"> O soverte vai custar R$ ${precofinal} e vai compremeter a mesada! </spam>`)
+        }  else  {
+            div_resultado . innerHTML  =  (`<spam style ="color: blue"> Hoje você está maneirando, gastou somente R$ ${precofinal} </spam>`)
+        }
+    }
+</script>

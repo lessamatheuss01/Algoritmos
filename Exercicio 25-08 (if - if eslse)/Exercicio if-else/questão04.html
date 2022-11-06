@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Frequência do Aluno</h2>
+    Qual é frequência do aluno ?<input type="text" id="in_falta">
+
+    <button onclick="analisar()">Analisar frequência</button>
+
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function analisar() {
+        var frequencia = Number(in_falta.value)
+        if (frequencia < 50) {
+        div_resultado.innerHTML = `<img src='https://blog.gazinatacado.com.br/wp-content/uploads/2016/04/perfil-turista-brasileiro-05.png'/>`
+        }   
+        else{frequencia == 50}{
+            div_resultado.innerHTML += `<img src='https://i.pinimg.com/originals/0b/a5/f7/0ba5f78de7dee058fe97883e63f05f11.jpg'/>`
+        }
+    }
+</script>
