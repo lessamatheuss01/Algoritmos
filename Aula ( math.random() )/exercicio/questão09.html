@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="nota()">Gerar uma nota de aluno</button>
+    <div id="div_nota"></div>
+    <button onclick="frequencia()">Gerar uma frequência</button>
+    <div id="div_frequencia"></div>
+    <button onclick="aprovado()">Aprovado ?</button>
+</body>
+</html>
+<script>
+    var notaAluno = 0
+    function nota(){
+        notaAluno = (3 + Math.random() * 10).toFixed(1)
+        if(notaAluno > 3 && notaAluno < 10){
+            div_nota.innerHTML = `${notaAluno}`
+        }
+    }
+    var frequenciaAluno = 0
+    function frequencia(){
+        frequenciaAluno = (50 + Math.random() * 100).toFixed(1)
+        if(frequenciaAluno > 50 && frequenciaAluno < 100){
+            div_frequencia.innerHTML = `${frequenciaAluno}`
+        }
+    }
+    function aprovado(){
+        if(notaAluno > 5 && frequenciaAluno > 5){
+            alert('Aprovado')
+        }else {
+            alert('Reprovado')
+        }
+    }
+</script>

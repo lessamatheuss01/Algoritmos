@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Repetindo matras</h2>
+
+    <button onclick="repetir5()">Repetir 5x</button>
+    <br>
+    <input placeholder="Repetições" id="in_repeticoes">
+    <button onclick="repetir()">Repetir N vezes</button>
+
+    <div id="div_repeticoes"></div>
+
+</body>
+</html>
+<script>
+    function repetir5() {
+        div_repeticoes.innerHTML = ''
+        
+        /* 
+        1- contador = 0 (SETUP / INICIALIZAÇÃO) - só é executado 1 vez
+        2- contador < 5 (CONDIÇÃO DE REPETIÇÃO) - começo da repetição (expressão logica)
+        3- contador ++ (ÚLTIMA LINHA VIRTUAL) - é executado após todas as linhas 
+        */
+
+        for(var contador = 0; contador < 5; contador ++) {
+            div_repeticoes.innerHTML += 'A irmã do Lucas é minha <br>'
+        }
+
+    }
+
+    function repetir() {
+        div_repeticoes.innerHTML = ''
+        
+        var repeticoes = Number(in_repeticoes.value)
+        for (var contador = 1; contador <= repeticoes; contador ++) {
+            div_repeticoes.innerHTML += `${contador}. Flamengo é um lixo <br>`
+        }
+    }
+</script>

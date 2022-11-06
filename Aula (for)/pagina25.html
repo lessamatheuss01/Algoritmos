@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Números aleatorios</h2>
+
+    <button onclick="sorteio_padrao()">De 0 até menos que 1</button>
+    <br>
+    <button onclick="sorteio_ate100()">De 0 até menos que 100</button>
+    <br>
+    <button onclick="sorteio_ate10()">De 1 até menos que 10</button>
+    <br>
+    <button onclick="sorteio_inteiro_ate10()">De 1 até menos que 10 inteiro</button>
+    <br>
+    <button onclick="sorteio_inteiro_ate6()">De 1 até menos que 6 inteiro</button>
+</body>
+</html>
+<script>
+    function sorteio_padrao() {
+        var sorteado = Math.random()
+        alert(`Sorteado: ${sorteado}`)
+    }
+
+    function sorteio_ate100() {
+        var sorteado = Math.random()*100
+        alert(`Sorteado: ${sorteado}`)
+    }
+
+    function sorteio_ate10() {
+        var sorteado = 1 + Math.random()*9
+        alert(`Sorteado: ${sorteado}`)
+    }
+
+    function sorteio_inteiro_ate10() {
+        var sorteado = parseInt(1 + Math.random()*10)
+        alert(`Sorteado: ${sorteado}`)
+    }
+
+    function sorteio_inteiro_ate6() {
+        var sorteado = parseInt(1 + Math.random()*6)
+        alert(`Sorteado: ${sorteado}`)
+    }
+</script>

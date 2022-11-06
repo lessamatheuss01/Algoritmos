@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="in_projeto">
+    <button onclick="cadastrar()">Registrar projeto</button>
+    <div id="div_mensagem"></div>
+
+    <button onclick="exibir()">Mostrar Projetos</button>
+    <div id="div_mensagem2"></div>
+</body>
+</html>
+<script>
+    var projetos = []
+
+    function cadastrar() {
+    div_mensagem.innerHTML = ''
+
+    projetos.push(in_projeto.value)
+
+    if (projetos.length < 5) {
+        div_mensagem.innerHTML += `Você já fez ${projetos.length} projetos. <br> Por isso você é um profissional Júnior desde o projeto "${projetos[0]}".`
+        
+    } else if (projetos.length < 13) {
+        div_mensagem.innerHTML += `Você já fez ${projetos.length} projetos. <br> Por isso você é um profissional Pleno desde o projeto "${projetos[4]}".`
+
+    } else{
+        div_mensagem.innerHTML += `Você já fez ${projetos.length} projetos. <br> Por isso você é um profissional Sênior desde o projeto "${projetos[12]}".`
+        
+    }   
+}
+
+    function exibir() {
+
+    div_mensagem2.innerHTML = ''
+
+    for (var indice = projetos.length; indice > 0; indice--) {
+
+        div_mensagem2.innerHTML += `${indice}- ${projetos[indice - 1]}<br>`
+    }
+}
+</script>

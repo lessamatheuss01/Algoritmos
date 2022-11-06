@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Lista de produtos</h3>
+
+    Nome do produto:
+    <input placeholder="Nome do Produto" id="in_nome"><br>
+    
+    Tipo:
+    <select name="" id="sel_tipo">
+        <option value="">--Selecione--</option>
+        <option value="Gerais">Gerais</option>
+        <option value="Alimentos">Alimentos</option>
+        <option value="Eletrônicos">Eletrônicos</option>
+    </select><br>
+
+    Preço:
+    <input placeholder="Preço do produto" id="in_preco">
+    <br>
+    <button onclick="registrar()">Registrar o produto</button>
+    <button onclick="verificar()">Lista de produtos</button>
+    <div id="div_mensagem"></div>
+
+    <h3>Filtros</h3>
+
+    <input placeholder="Pesquisa de produtos" id="in_pesquisa"><br>
+    <button onclick="procurar()">Pesquisar por produto</button><br>
+
+    Pesquisa por filtro
+    <select name="" id="sel_filtro">
+        <option value="">--Selecione--</option>
+        <option value="Gerais">Gerais</option>
+        <option value="Alimentos">Alimentos</option>
+        <option value="Eletrônicos">Eletrônicos</option>
+    </select>
+    <button onclick="filtrar()">Filtrar</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    var lista = []
+
+    function registrar(){
+        var nome = in_nome.value
+        var preco = in_preco.value
+        var tipo = sel_tipo.value
+
+        if(nome == "" || preco == "" || tipo == ""){
+         alert('Inválido! Verifique o preenchimento dos campos e tente novamente')
+        }else {
+            var produto = {
+                nome,
+                preco,
+                tipo
+            }
+            lista.push(produto)
+        }
+    }
+
+    function verificar(){
+        div_mensagem.innerHTML = ""
+
+        if(lista == ""){
+            alert('Não há produtos registrados na lista!')
+        }else {
+            for(var contador = 0; contador < lista.length; contador++){
+                var atualizado = lista[contador]
+
+                div_mensagem.innerHTML += `
+                Produto:<br>
+                Nome: ${atualizado.nome}<br>
+                Tipo: ${atualizado.tipo}<br>
+                Preço: ${atualizado.preco}<br><br>
+                `
+            }
+        }
+    }
+
+    function procurar(){
+        div_resultado.innerHTML = ""
+
+        var pesquisaProduto = in_pesquisa.value
+
+        var produtoFinal = []
+
+        if(lista.length > 0){
+            for(var indice = 0; indice < lista.length; indice++){
+                if(pesquisaProduto == lista[indice].nome){
+                    produtoFinal.push(lista[indice])
+                }
+            }
+
+            if(produtoFinal.length > 0){
+                div_resultado.innerHTML = `Produto encontrados na busca por ${pesquisaProduto}<br><br>`
+                for(var c = 0; c < produtoFinal.length; c++){
+                    c
+                    div_resultado.innerHTML += `
+                    Produto: <br>
+                    Nome: ${produtoFinal[c].nome}<br>
+                    Tipo: ${produtoFinal[c].tipo}<br>
+                    Preço ${produtoFinal[c].preco}<br>
+                    `
+                }
+            }else{
+                alert('Não há nenhum produto com este nome registrado')
+            }
+        }
+    }
+
+    function filtrar() {
+        div_resultado.innerHTML = ""
+
+        var filtroP = sel_filtro.value
+        var filtroF = []
+
+        if(lista.length > 0){
+            for(var i = 0; i < lista.length; i++){
+                if(filtroP == lista[i].tipo){
+                    filtroF.push(lista[i])
+                }
+            }
+
+            if(filtroF.length > 0){
+                div_resultado.innerHTML = `Filtro encontrados na busca por ${filtroP}<br><br>`
+
+                for(var a = 0; a < filtroF.length; a++){
+                    a
+                    div_resultado.innerHTML = `
+                    Produto: <br>
+                    Nome: ${filtroF[a].nome}<br>
+                    Tipo: ${filtroF[a].tipo}<br>
+                    Preço: ${filtroF[a].preco}<br><br>
+                    `
+                }
+            }else {
+                alert('Não há nenhum produto com este nome registrado!')
+            }
+        }
+    }
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Nome" id="in_nome"><br>
+    <input placeholder="Primeiro número da sorte" id="in_numero1">
+    <br>
+    <input placeholder="Segundo número da sorte" id="in_numero2">
+    <br>
+    <input placeholder="Terceiro número da sorte" id="in_numero3">
+    <br>
+
+
+    <button onclick="sorteio()">Sortear</button>
+    <div id="div_sorte"></div>
+</body>
+</html>
+<script>
+    function sorteio() {
+        var nome = in_nome.value
+        var numero1 = Number(in_numero1.value)
+        var numero2 = Number(in_numero2.value)
+        var numero3 = Number(in_numero3.value)
+        var sorteado = parseInt(1 + Math.random() * 10)
+
+        if (numero1 < 1 || numero1 > 10 || numero1 < 1 || numero1 > 10 || numero1 < 1 || numero1 > 10) {
+            alert(`Número inválido, tente novamente!`)
+        } else if (sorteado == numero1 || sorteado == numero2 || sortead0 == numero3) {
+                div_sorte.innerHTML = `Parabéns ${nome}, você foi sorteado(a) após ${numero1} sorteios`
+        }
+        
+    }
+</script>

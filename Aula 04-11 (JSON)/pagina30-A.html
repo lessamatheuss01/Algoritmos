@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Insira o nome(a)" id="in_nome">
+    <input placeholder="Insira a idade" id="in_idade">
+    <div id="div_mensagem"></div>
+    <button onclick="exibir()">Exibir</button>
+</body>
+</html>
+
+<script>
+    function exibir() {
+        var nome = in_nome.value
+        var idade = Number(in_idade.value)
+        var pessoa = {
+            nome: nome,
+            idade: idade,
+        }
+    
+        // pessoa.nome = ""
+
+        div_mensagem.innerHTML += `Nome: ${pessoa.nome} <br> Idade: ${pessoa.idade}` 
+        
+    }
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="time()">Sortear time</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function time() {
+        var sortear = parseInt(1+Math.random() * 4)
+
+        div_mensagem.innerHTML = ''
+        if(sortear == 1){
+          div_mensagem.innerHTML = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9e4Dq3Mez0QCdWcX0daqPOySnH1aNw8imEVJNwFoEp9SulznYNXXS0JEhPQZufcQLvAE&usqp=CAU" width="150px"> <br>`
+        } else if(sortear == 2){
+            div_mensagem.innerHTML = `<img src="https://toppng.com/uploads/preview/escudo-do-sao-paulo-11550718376ssrwwhsl8b.png" width="150px">`
+        }else if(sortear == 3){
+            div_mensagem.innerHTML = `<img src="https://www.imagensempng.com.br/wp-content/uploads/2021/01/Escudo-Palmeiras-Png-1024x1024.png" width="150px">`
+        }else if(sortear == 4){
+            div_mensagem.innerHTML = `<img src="https://media.santosfc.com.br/wp-content/uploads/2022/04/Escudo-sem-estrelas229x220-1.png" width="150px">`
+        }
+    }
+</script>

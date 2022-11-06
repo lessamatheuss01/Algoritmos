@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="jogador1()">Jogador 1 jogar dadinho</button>
+    <div id="div_jogador1"></div>
+    <button onclick="jogador2()">Jogador 2 jogar dadinho</button>
+    <div id="div_jogador2"></div>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    var jogada1 = 0
+    function jogador1(){
+        jogada1 = parseInt(1 + Math.random() * 6)
+
+        if(jogada1 == 1){
+            div_jogador1.innerHTML = `<img src="https://images.vectorhq.com/images/previews/27e/dado-1-138329.png" width="150px"> <br>`
+        } else if(jogada1 == 2){
+            div_jogador1.innerHTML = `<img src="https://cdn.pixabay.com/photo/2014/04/03/11/56/dice-312627_960_720.png" width="150px">`
+        }else if(jogada1 == 3){
+            div_jogador1.innerHTML = `<img src="https://cdn.pixabay.com/photo/2014/04/03/11/56/dice-312624_960_720.png" width="150px">`
+        }else if(jogada1 == 4){
+            div_jogador1.innerHTML = `<img src="https://img1.gratispng.com/20180315/kse/kisspng-dice-four-sided-die-game-clip-art-dice-faces-5aaad16f126d76.5950550615211441750755.jpg" width="150px">`
+        }else if(jogada1 == 5){
+            div_jogador1.innerHTML = `<img src="http://www.i2clipart.com/cliparts/2/3/3/b/clipart-dado-5-256x256-233b.png" width="150px">`
+        }else if(jogada1 == 6){
+            div_jogador1.innerHTML = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnH39TWlM_nNgPV1kRhPfZDKYHu6x_r5MbLsb4HSFV2-durDthMijs8eR-4gSu69BYCuc&usqp=CAU" width="150px">`
+        }
+    }
+
+    var jogada2 = 0
+    function jogador2(){
+        jogada2 = parseInt(1 + Math.random() * 6)
+
+        if(jogada2 == 1){
+            div_jogador2.innerHTML = `<img src="https://images.vectorhq.com/images/previews/27e/dado-1-138329.png" width="150px"> <br>`
+        } else if(jogada2 == 2){
+            div_jogador2.innerHTML = `<img src="https://cdn.pixabay.com/photo/2014/04/03/11/56/dice-312627_960_720.png" width="150px">`
+        }else if(jogada2 == 3){
+            div_jogador2.innerHTML = `<img src="https://cdn.pixabay.com/photo/2014/04/03/11/56/dice-312624_960_720.png" width="150px">`
+        }else if(jogada2 == 4){
+            div_jogador2.innerHTML = `<img src="https://img1.gratispng.com/20180315/kse/kisspng-dice-four-sided-die-game-clip-art-dice-faces-5aaad16f126d76.5950550615211441750755.jpg" width="150px">`
+        }else if(jogada2 == 5){
+            div_jogador1.innerHTML = `<img src="http://www.i2clipart.com/cliparts/2/3/3/b/clipart-dado-5-256x256-233b.png" width="150px">`
+        }else if(jogada2 == 6){
+            div_jogador2.innerHTML = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnH39TWlM_nNgPV1kRhPfZDKYHu6x_r5MbLsb4HSFV2-durDthMijs8eR-4gSu69BYCuc&usqp=CAU" width="150px">`
+        }else if(jogada1 > jogada2){
+            div_resultado.innerHTML += `Jogador 1 venceu`
+        }else if(jogada1 < jogada2){
+            div_resultado.innerHTML += `Jogador 2 venceu`
+        }else if( jogada1 == jogada2){
+            div_resultado.innerHTML += `Empate`
+        }
+    }
+</script>

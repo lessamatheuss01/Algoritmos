@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="quero()">Quero um cabalístico</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function quero() {
+        var sortear = parseInt(1 + Math.random() * 15)
+
+        if(sortear !=3 && sortear != 4 && sortear != 7 && sortear != 10 && sortear != 12){
+            div_mensagem.innerHTML = 'Eu S2 números cabalísticos!'
+        }else {
+            div_mensagem.innerHTML = 'Ah, me dá um número bom na próxima!'
+        }
+    }
+</script>

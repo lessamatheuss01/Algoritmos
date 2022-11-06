@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="avaliar()">Avaliar</button>
+    <div id="div_nota"></div>
+    <button onclick="equipe()">Equipe</button>
+    <div id="div_equipe"></div>
+</body>
+</html>
+<script>
+    var contador = 0;
+    var nota = sortear + contador;
+    var mediaGeral = (nota + nota) / 2;
+
+    function avaliar() {
+        sortear = parseInt(1 + Math.random() * 5)
+        div_nota.innerHTML = `Nota recebida: ${sortear}`
+
+        if(sortear > 0 && sortear < 0.5){
+            div_nota.innerHTML += `<img src="https://img.ibxk.com.br/2014/12/18/18151824881404.jpg" width="100px"> `
+        }else if(sortear > 0.5 && sortear < 1.5){
+            div_nota.innerHTML += `<img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/237/slightly-frowning-face_1f641.png" width="100px">`
+        }else if(sortear > 1.5 && sortear < 3.5){
+            div_nota.innerHTML += `<img src="https://thumbs.dreamstime.com/b/cara-neutra-amarela-de-emoji-do-vetor-116088061.jpg" width="100px">`
+        }else if(sortear > 3.5 && sortear < 4.5){
+            div_nota.innerHTML += `<img src="https://cdn.pixabay.com/photo/2020/12/18/01/27/smile-5840910_960_720.png" width="100px">`
+        }else if(sortear > 4.5){
+            div_nota.innerHTML += `<img src="https://cdn.pixabay.com/photo/2020/12/27/20/25/smile-5865209_960_720.png" width="100px">`
+        }
+    }
+
+    function equipe() {
+        mediaGeral = parseInt(1 + Math.random() * 5)
+        div_equipe.innerHTML = `Media geral: ${mediaGeral}`
+
+        if(mediaGeral > 0 && mediaGeral < 0.5){
+            div_equipe.innerHTML += `<img src="https://img.ibxk.com.br/2014/12/18/18151824881404.jpg" width="100px"> `
+        }else if(mediaGeral > 0.5 && mediaGeral < 1.5){
+            div_equipe.innerHTML += `<img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/237/slightly-frowning-face_1f641.png" width="100px">`
+        }else if(mediaGeral > 1.5 && mediaGeral < 3.5){
+            div_equipe.innerHTML += `<img src="https://thumbs.dreamstime.com/b/cara-neutra-amarela-de-emoji-do-vetor-116088061.jpg" width="100px">`
+        }else if(mediaGeral > 3.5 && mediaGeral < 4.5){
+            div_equipe.innerHTML += `<img src="https://cdn.pixabay.com/photo/2020/12/18/01/27/smile-5840910_960_720.png" width="100px">`
+        }else if(mediaGeral > 4.5){
+            div_equipe.innerHTML += `<img src="https://cdn.pixabay.com/photo/2020/12/27/20/25/smile-5865209_960_720.png" width="100px">`
+        }
+    }
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Numero da sorte" id="in_numero">
+    <button onclick="valendo()">Valendo!</button>
+    <div id="div_sorteio"></div>
+</body>
+</html>
+<script>
+    function valendo() {
+        var numero = Number(in_numero.value)
+        var sorteado = parseInt(1 + Math.random() * 100)
+        var total = numero * sorteado
+        div_sorteio.innerHTML = `${sorteado}`
+
+        if(sorteado == numero){
+            alert(`Foram necessarios ${total} sorteio`)
+        }
+    }
+</script>

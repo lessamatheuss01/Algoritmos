@@ -1,0 +1,20 @@
+    Function não_me_execute() {
+        /* As 3 partes de for são opcionais
+        EXEMPLOS:
+        */
+
+        // EXEMPLO sem 1° parte
+        var contador = Number(in_blabla.value)
+        for(; contador < 10; contador++){
+
+        }
+
+        // exemplo sem a 3° parte
+        for (var contador = 0 ; contador < 20) {
+            if(teste){
+                contador ++
+            }else {
+                contador++
+            }
+        }
+    }

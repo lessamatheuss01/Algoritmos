@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="limite inferior amostragem" id="in_limiteInferior">
+    <br>
+    <input placeholder="limite superior amostragem" id="in_limiteSuperior">
+    <br>
+    <input placeholder="testar a divisibilidade" id="in_teste">
+
+    <button onclick="contar()">Contar</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function contar() {
+        div_mensagem.innerHTML = ''
+        var inferior = Number(in_limiteInferior.value)
+        var superior = Number(in_limiteSuperior.value)
+        var testar = Number(in_teste.value)
+
+        if(inferior <= 1 || superior >= 100 || testar < 3 || testar > 10){
+            div_mensagem.innerHTML = 'Numeros limitado'
+        }else {
+            for(contador = inferior; contador <= superior; contador++){
+                if(contador % testar == 0){
+                div_mensagem.innerHTML += `${contador} <br>`
+            }
+        }
+    }
+}
+</script>

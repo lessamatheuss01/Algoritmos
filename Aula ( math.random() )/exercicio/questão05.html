@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="jogar()">Jogar</button>
+    <div id="div_jogo"></div>
+</body>
+</html>
+<script>
+    function jogar() {
+        var sortear = parseInt(1 + Math.random() * 3)
+
+        if(sortear == 1){
+            div_jogo.innerHTML = `<img src="https://http2.mlstatic.com/D_NQ_NP_693806-MLB26805885587_022018-O.jpg" width="200px">`
+        }else if(sortear == 2){
+            div_jogo.innerHTML = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShP6IeH5PU3LQWimtgGgHx3PonXmx5tUyiTk7HTq_X4qfEGJtLdhrRbXHpZ2hf9afX9cs&usqp=CAU" width="200px">`
+        }else if(sortear == 3){
+            div_jogo.innerHTML = `<img src="https://http2.mlstatic.com/D_NQ_NP_841522-MLB26805889038_022018-O.jpg" width="200px">`
+        }
+    }
+</script>

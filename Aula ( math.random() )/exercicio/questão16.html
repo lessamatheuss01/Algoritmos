@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="ver()">Ver a LUA</button>
+    <div id="div_LUA"></div>
+</body>
+</html>
+<script>
+    function ver() {
+        var lua = parseInt(1 + Math.random() * 31)
+
+        if(lua >=1 && lua <=7){
+            div_LUA.innerHTML = `LUA NOVA <br> <img src="https://img2.gratispng.com/20180426/yaw/kisspng-lunar-phase-new-moon-earth-near-side-of-the-moon-moon-surface-5ae1e8ed4cbce7.3712986415247546693143.jpg" width="150px">`
+        }else if(lua >=8 && lua <=16){
+            div_LUA.innerHTML = `LUA CHEIA <br> <img src="https://e7.pngegg.com/pngimages/1002/605/png-clipart-moon-moon.png" width="150px">`
+        }else if(lua >=23 && lua <=31){
+            div_LUA.innerHTML = `LUA CRESCENTE <br> <img src="https://www.horoscopovirtual.com.br/imagem/artigos/interno/images/l_cresc_1312758950.png" width="150px">`
+        } 
+    }
+</script>

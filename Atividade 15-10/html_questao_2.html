@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bebe pouco ou muito?</title>
+</head>
+<body>
+    
+    <input placeholder="Quantas taças" id="in_tacas"> <br>
+    <input placeholder="Preço da taça" id="in_preco"> <br>
+    Qual sua tolerância a álcool? <select id="sel_tipo">
+        <option value="fraco">Fraco pra bebida</option>
+        <option value="medio">Bebe todo final de semana</option>
+        <option value="brabo">Só fica bêbado com Querosene</option>
+    </select>
+    <br>
+    <button onclick="beber()">Tomar vinho</button>
+
+    <div id="div_resultado"></div>
+    <img id="img_bebida">
+
+</body>
+</html>
+<script>
+    function beber(){
+        var taca = Number(in_taca.value)
+        var preco = Number(in_preco.value)
+        var valor_Total = taca * preco
+        var tolerancia = sel_tipo.value
+
+        if(taca < 0 || taca > 30){
+            alert(`Só é possível beber de 0 a 30 taças`)
+        } else if(preco < 0.01){
+            alert(`Onde ja se viu vinho grátis?`)
+        }
+        div_resultado.innerHTML += `Zé Buduia tomou um total de ${taca} taças de vinho, pagando R$ ${valor_Total} por isso<br>`
+
+        if (tolerancia == "fraco") {
+            if (taca >=1 && taca <=2) {
+                div_resultado.innerHTML += `<img src="https://moodle.sptech.school/pluginfile.php/18643/mod_assign/introattachment/0/levemente.png?forcedownload=1">`
+            } else if (taca >=3 && taca <=4) {
+                div_resultado.innerHTML += `<img src="https://moodle.sptech.school/pluginfile.php/18643/mod_assign/introattachment/0/visivelmente.png?forcedownload=1">`
+            } else if (taca >=5) {
+                div_resultado.innerHTML += `<img src="https://moodle.sptech.school/pluginfile.php/18643/mod_assign/introattachment/0/superbebado.png?forcedownload=1">`
+            }
+
+        } else if (tolerancia =="medio") {
+            if (taca >=3 && taca <=4) {
+                div_resultado.innerHTML += `<img src="https://moodle.sptech.school/pluginfile.php/18643/mod_assign/introattachment/0/levemente.png?forcedownload=1">`
+            } else if (taca >=5 && taca <=7) {
+                div_resultado.innerHTML += `<img src="https://moodle.sptech.school/pluginfile.php/18643/mod_assign/introattachment/0/visivelmente.png?forcedownload=1">`
+            } else if (taca >=8) {
+                div_resultado.innerHTML += `<img src="https://moodle.sptech.school/pluginfile.php/18643/mod_assign/introattachment/0/superbebado.png?forcedownload=1">`
+            }
+
+        } else if (tolerancia =="brabo") {
+            if (taca >=10 && taca <=13) {
+                div_resultado.innerHTML += `<img src="https://moodle.sptech.school/pluginfile.php/18643/mod_assign/introattachment/0/levemente.png?forcedownload=1">`
+            } else if (taca >=14 && taca <=19) {
+                div_resultado.innerHTML += `<img src="https://moodle.sptech.school/pluginfile.php/18643/mod_assign/introattachment/0/visivelmente.png?forcedownload=1">`
+            } else if (taca >=20) {
+                div_resultado.innerHTML += `<img src="https://moodle.sptech.school/pluginfile.php/18643/mod_assign/introattachment/0/superbebado.png?forcedownload=1">`
+            }
+        }
+    }
+</script>

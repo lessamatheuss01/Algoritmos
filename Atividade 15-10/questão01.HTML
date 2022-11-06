@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Quiosque  Mirosmar - Controle de Vendas</h1>
+
+    <h2>-----Abertura do Quiosque-----</h2>
+    Entre com quantidade de Água engarrafada no estoque: <input type="text" id="in_agua"><br>
+    Entre com quantidade de Coco fechado no estoque: <input type="text" id="in_coco"><br>
+    <button onclick="abrir()">Abrir o quiosque</button>
+
+    <h2>-----Estoque Inicial-----</h2>
+    <div id="div_mensagem"></div>
+
+    <h2>-----Registro das Operações de venda-----</h2>
+    Entre com quantidade vendido: <input type="text" id="in_qtdeVendida">
+    informe o produto vendido: 
+     <select id="sel_produtoVendido">
+        <option id="o">Coco Fechado</option>
+        <option id="1">Água engarrafada</option>
+    </select>
+    <button onclick="registrar()">Rgistrar a venda</button>
+    <button style="background-color: red;" onclick="encerrar()">Encerrar tudo</button>
+    <div id="div_mensagemFinal"></div>
+</body>
+</html>
+
+<script>
+
+    var agua = 0;
+    var coco = 0;
+
+    function abrir() {
+        agua += Number(in_agua.value)
+        coco += Number(in_coco.value)
+
+        if(agua < 100) {
+            div_mensagemFinal.innerHTML = 'Com essa quantidade de Água engarrafada não dá para abrir o quiosque <br>'
+        }else if(coco < 200){
+            div_mensagemFinal.innerHTML = ' Com essa quantidade de Coco fechado não dá para abrir o quiosque'
+        }else if (agua >= 100 && agua <= 1000){
+            div_mensagemFinal.innerHTML += 'Engarrafe mais água de coco <br>'
+        }if(coco >= 200 && coco <= 2000) {
+            div_mensagemFinal.innerHTML += 'Compre mais cocos <br>'
+        }
+        div_mensagem.innerHTML = `Água engarrafada: <b>${agua}</b> <br> Coco fechado: <b>${coco}<b/>`
+    }
+
+    function registrar() {
+        var qtde_Vendida = Number(in_qtdeVendida.value)
+        var produto_Vendido = sel_produtoVendido.value
+
+        if(produto_Vendido == 'agua'){
+        div_mensagemFinal.innerHTML += `Com a venda de ${qtde_Vendida} de ${produto_Vendido} o saldo no estoque é de ${agua - qtde_Vendida}`
+        }
+        else {
+            div_mensagemFinal.innerHTML += `Com a venda de ${qtde_Vendida} de ${produto_Vendido} o saldo no estoque é de ${coco - qtde_Vendida}<br>`
+        }
+    }
+
+    var qtde_Vendida = 0;
+    var produto_Vendido = 0;
+
+    function encerrar() {
+        qtde_Vendida += Number(in_qtdeVendida.value)
+        produto_Vendido += sel_produtoVendido.value
+        var aguaVendida = agua - qtde_Vendida
+        var cocoVendida = coco - qtde_Vendida
+
+        if(produto_Vendido == 'agua'){
+        div_mensagemFinal.innerHTML = `Vendas de Água engarrafada<br> Saldo de produto no estoque: ${aguaVendida}<br> Quantidade de vendas: ${qtde_Vendida}<br> Porcentagem das vendas:${(aguaVendida / qtde_Vendida)}%`
+        }
+        else {
+            div_mensagemFinal.innerHTML = `Vendas de Água engarrafada<br> Saldo de produto no estoque: ${cocoVendida}<br> Quantidade de vendas: ${qtde_Vendida}<br> Porcentagem das vendas:${(cocoVendida / qtde_Vendida)}%`
+        }
+    }
+</script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Quantas coca-colas você bebeu" id="in_coca">
+    <br>
+    <button onclick="ver()">Ver a quantidade</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function ver() {
+        var coca = Number(in_coca.value)
+
+        for(contador = 0; contador < coca; contador++) {
+            div_mensagem.innerHTML += `<img src="https://www.bistek.com.br/media/catalog/product/cache/15b2f1f06e1cd470c80b1f3fd7ec8301/1/9/1924427.jpg" width="100px">`
+        }
+    }
+</script>
