@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>questão 14</title>
+</head>
+<body>
+    <center>
+        <h1>
+            <div id="div_hitPoints"></div>
+        </h1>
+        <div id="div_mensagem"></div>
+        <img src="" alt="" id="img_lutador" style="height:200px;"> <br><br>
+        <button onclick="apanhar()">Apanhar</button> <button onclick="concentrar()">Concentrar força</button>
+    </center>
+
+    
+</body>
+</html>
+
+<script>
+    var vida = 1000
+    var apanha = 100
+    var forca = 0.05
+    var imagem = "https://static.wikia.nocookie.net/naruto/images/7/73/Jiraiya_perfil.PNG/revision/latest/scale-to-width-down/1200?cb=20191203234503&path-prefix=pt-br"
+    div_hitPoints.innerHTML = `Vida do lutador: ${vida}`
+    img_lutador.src = imagem
+
+    function apanhar() {
+        vida = vida - apanha
+        div_hitPoints.innerHTML = `Vida do lutador: ${vida.toFixed(2)}`
+
+        if (vida <= 0) {
+            imagem = "https://criticalhits.com.br/wp-content/uploads/2020/09/jiraiya-morrendo.jpg"
+            img_lutador.src = imagem
+            div_mensagem.innerHTML = `<b> O LUTADOR JA ERA!!! </b>`
+
+            if (vida <= 0) {
+                apanha = 0
+                forca = 0
+            }
+        } else {
+            div_mensagem.innerHTML = `<b> LUTADOR AINDA VIVO!!! </b>`
+        }
+    }
+
+    function concentrar() {
+        vida += vida * forca
+        div_hitPoints.innerHTML = `Vida do lutador: ${vida.toFixed(2)}`
+
+    }
+
+</script>

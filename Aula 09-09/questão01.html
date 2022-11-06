@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Pedido de Pizza</h2>
+    Qual o sabor da pizza: <input type="" id="in_sabor"><br>
+    Qual o preço da pizza: <input type="text" id="in_preco"><br>
+    Qual a quantidade de amigos? <input type="text"id="in_amigos"><br>
+
+    <button onclick="pedir()">Pedir Pizza</button>
+
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function pedir() {
+        var sabor = in_sabor.value
+        var preco = Number (in_preco.value).toFixed(2)
+        var amigos = Number (in_amigos.value)
+        var resultado = (preco / amigos).toFixed(2)
+
+        div_resultado.innerHTML = `"A pizza de ${sabor} custa R$ ${preco} e cada amigo vai pagar R$ ${resultado}`
+
+    }
+</script>

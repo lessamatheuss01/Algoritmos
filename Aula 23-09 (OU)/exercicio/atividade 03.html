@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Covid</h2>
+
+    <input placeholder="Qual a renda individual" id="in_rendaIndividual"><br>
+    <input placeholder="Qual a renda familiar" id="in_rendaFamilia"><br>
+
+    <button onclick="beneficio()">Terei o benefício</button>
+</body>
+</html>
+
+<script>
+    function beneficio() {
+        var rendaIndividual = Number(in_rendaIndividual.value)
+        var rendaFamilia = Number(in_rendaFamilia.value)
+
+        if(rendaIndividual <= 2000 || rendaFamilia <= 3000) {
+            alert ('Você terá direito ao auxílio')
+        }else {
+            alert ('Sem direito ao auxílio')
+        }
+    }
+</script>

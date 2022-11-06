@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 02</title>
+</head>
+<body>
+    <h2> Classe social</h2>
+
+    Qual sua renda familiar <input id="in_renda">
+
+    <button onclick="validar()">Verificar</button>
+
+    <div id="div_renda"></div>
+</body>
+</html>
+
+<script>
+    function validar() {
+        var renda = Number(in_renda.value)
+
+        if(renda <= 250) {
+            div_renda.innerHTML = `Classe E`
+        } else if(renda <= 900) {
+            div_renda.innerHTML = `Classe D`
+        } else if(renda <= 2500) {
+            div_renda.innerHTML = `Classe C`
+        } else if(renda <= 9500) {
+            div_renda.innerHTML = `Classe B`
+        }else {
+            div_renda.innerHTML = `Classe A`
+        }
+    }
+</script>

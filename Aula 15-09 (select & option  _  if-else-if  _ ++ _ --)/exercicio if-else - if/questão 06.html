@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 06</title>
+</head>
+<body>
+    
+    <select id="sel_time">
+        <option value="">- Escolhe -</option>
+        <option value="1">Corinthians</option>
+        <option value="2">Palmeiras</option>
+        <option value="3">Santos</option>
+        <option value="4">São Paulo</option>
+    </select>
+
+    <button onclick="torcedor()">Fale sobre seu time</button>
+
+    <div id="div_torce"></div>
+</body>
+</html>
+
+<script>
+    function torcedor() {
+        var time = sel_time.value
+
+        if(time == "") {
+            div_torce.innerHTML = ""
+        } else if(time == 1) {
+            div_torce.innerHTML = `<span style ="background-color: black; color: white">Salve o Corinthians</span`
+        } else if(time == 2) {
+            div_torce.innerHTML = `<span style ="background-color: green; color: white">Salve o alviverde</span`
+        }else if (time == 3) {
+            div_torce.innerHTML = `<span style ="background-color: white; color: black">Agora que dá a bola é o Santos</span`
+        }else if (time == 4) {
+            div_torce.innerHTML = `<span style ="background-color: black; color: red">Salve o Tricolor paulista</span`
+        }
+    }
+</script>

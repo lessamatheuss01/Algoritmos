@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Emprego</h2>
+
+   Digite seu salário<input id="in_salario">
+
+   <select id="sel_desconto">
+    <option value="">- Selecione o seu desconto -</option>
+    <option value="0.1">INSS</option>
+    <option value="0.2">IR</option>
+    <option value="0.05">VT</option>
+</select>
+
+<button onclick="desconto()">Ver desconto</button>
+
+<div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+    function desconto() {
+        var desconto = (Number (in_salario.value) * Number(sel_desconto.value)).toFixed(2)
+
+        div_resultado.innerHTML = `Valor desse desconto é R$ ${desconto}`
+    }
+</script>

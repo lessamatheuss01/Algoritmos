@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 04</title>
+</head>
+<body>
+    <h2>Nutróloga</h2>
+    Qual o peso da criança: <input id="in_peso" onkeyup="validar()">
+
+    <div id="div_peso"></div>
+
+</body>
+</html>
+
+<script>
+    function validar() {
+        var peso = Number(in_peso.value)
+
+        if(peso <= 13.5) {
+            div_peso.innerHTML = `Abaixo do peso`
+        }else if(peso > 21.2) {
+            div_peso.innerHTML = `Acima do peso`
+        }else if (peso >= 21.2) {
+            div_peso.innerHTML = ` Peso na média`
+        }else {
+            div_peso.innerHTML = `Peso perfeito`
+        }
+    }
+</script>

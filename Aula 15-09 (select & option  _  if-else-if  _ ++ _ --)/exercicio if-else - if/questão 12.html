@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>questão 12</title>
+</head>
+<body>
+
+    <h2>Habilidade</h2>
+    
+    <div id="div_comeco"></div>
+    <button onclick="clicar()">CLICA MEU</button>
+
+
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    var click = 0
+    div_resultado.innerHTML = `Você já clicou ${click} vezes`
+
+    function clicar() {
+         ++click   
+         div_resultado.innerHTML = `Você já clicou ${click} vezes`
+
+         if (click < 5) {
+            div_resultado.innerHTML += `<br>Dedo fraquinho, hein`
+         } else if (click <= 10) {
+            div_resultado.innerHTML += `<br>Dedo bom, mano`
+         } else if (click < 15) {
+            div_resultado.innerHTML += `<br>Gosta de clicar, hein!`
+         }else {
+            div_resultado.innerHTML += `<br>Eita dedo nervoso!`
+         }
+    }
+
+</script>

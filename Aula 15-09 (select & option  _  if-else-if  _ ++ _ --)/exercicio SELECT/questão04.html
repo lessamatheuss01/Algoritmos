@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Oração São Francisco</h2>
+
+    <select id="sel_oracao" onchange="on_oracao()">
+        <option value="">-Escolhe-</option>
+        <option value="que eu leve o Amor">Onde houver Ódio</option>
+        <option value="que eu leve o Perdão">Onde houver Ofensa</option>
+        <option value="que eu leve o União">Onde houver Discórdia</option>
+        <option value="que eu leve o Fé">Onde houver Dúvid</option>
+    </select>
+</body>
+</html>
+
+<script>
+    function on_oracao() {
+        var oracao = sel_oracao.value
+        alert (`${oracao}`)
+    }
+</script>

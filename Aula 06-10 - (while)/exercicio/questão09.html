@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Numero" id="in_numero">
+    <input placeholder="Frase" id="in_frase">
+
+    <button onclick="falar()">Papagaio</button>
+    
+</body>
+</html>
+
+<script>
+    function falar() {
+        var numero = Number(in_numero.value)
+        var frase = in_frase.value
+        var papagaio = 0
+
+        while(papagaio < numero) {
+            papagaio++
+            alert(`${frase}`)
+        }
+
+
+    }
+</script>

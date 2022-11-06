@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Quantos ônibus precisa pagar" id="in_qtdOnibu"><br>
+    <input placeholder="Quantos trens precisa pegar" id="in_qtdTrem"><br>
+    <input placeholder="Quantos metrôs precisa pagar" id="in_qtdMetro"><br>
+
+    <button onclick="partiu()">#Partiu Trajeto</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function partiu() {
+        var onibus = Number(in_qtdOnibu.value)
+        var trem = Number(in_qtdTrem.value)
+        var metro = Number(in_qtdMetro.value)
+        var contador = 1
+
+        div_mensagem.innerHTML = ''
+
+        while (contador <= onibus) {
+            div_mensagem.innerHTML += `<div style="color: red;">Pegando o ${contador}º buzão</div>`
+            contador++
+        }
+        contador = 1;
+        while (contador <= trem) {
+            div_mensagem.innerHTML += `<div style="color: green;">Pegando o ${contador}º trem</div>`
+            contador++
+        }
+        contador = 1;
+        while (contador <= metro) {
+            div_mensagem.innerHTML += `<div style="color: blue;">Pegando o ${contador}º trem</div>`
+            contador++
+        }
+        contador = 1;
+    }
+</script>

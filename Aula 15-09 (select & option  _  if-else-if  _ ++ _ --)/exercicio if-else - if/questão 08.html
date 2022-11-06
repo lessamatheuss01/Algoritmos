@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>questão 08</title>
+</head>
+<body>
+    <h2>Quarentena</h2>
+
+    Quantos pães Franceses vocês comeu? <input id="in_paesFranceses"><br>
+    Quantos pacotes de bolacha recheada você comeu? <input id="in_bolacha"><br>
+    Quantos copos de achocolatado você tomou? <input id="in_achocolatado"><br>
+
+    <button onclick="verificar()">Verificar calorias</button>
+
+    <div id="div_verificar"></div>
+</body>
+</html>
+
+<script>
+    function verificar() {
+        var paes = Number(in_paesFranceses.value)
+        var bolacha = Number(in_bolacha.value)
+        var copos = Number(in_achocolatado.value)
+
+        var total = paes + bolacha + copos
+
+        if (total < 200) {
+            div_verificar.innerHTML = `Parabéns, vai sair da quarentena em forma`
+
+        } else if (total <= 400) {
+            div_verificar.innerHTML = `Cuidado, vai ficar mais fofinho(a) após a quarentena`
+
+        } else {
+            div_verificar.innerHTML = `Bom, acho que muitos não vão te reconhecer após a quarentena`
+            
+        }
+    }
+</script>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Valor da passagem: <input id="in_passagem">
+    Qunatas Viagens: <input id="in_viagem">
+
+    <button onclick="onibus()">Ver econômia</button>
+</body>
+</html>
+
+<script>
+    function onibus() {
+        alert (`Você economizou R$ ${(Number(in_passagem.value) * Number(in_viagem.value))}`)
+    }
+</script>

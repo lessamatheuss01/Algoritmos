@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Idade</h2>
+    Sua idade: <input id="in_numero"> <br>
+
+    <button onclick="homem()">Aposentadoria Homem</button> <br>
+
+    <button onclick="mulher()">Aposentadoria Mulher</button>
+
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function homem() {
+        div_resultado.innerHTML = ` Falta ${70-Number(in_numero.value)} anos para você se aposentar`
+    }
+
+    function mulher() {
+        div_resultado.innerHTML = ` Falta ${60-Number(in_numero.value)} anos para você se aposentar`
+    }
+</script>

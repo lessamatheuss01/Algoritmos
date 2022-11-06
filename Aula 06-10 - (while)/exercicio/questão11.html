@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Quantos titulos tem seu time" id="in_titulo">
+    <button onclick="trofeu()">Ver troféus de mundiais FIFA</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+<img src="" alt="">
+<script>
+    function trofeu() {
+        var titulo = Number(in_titulo.value)
+        var contador = 0
+
+        if(titulo <= 0){
+            div_mensagem.innerHTML = `<img src="https://jpimg.com.br/uploads/2018/03/torcedores-7a1-estadaoconteudo-1024x683.jpg alt="""`
+        }else {
+            while(contador < titulo) {
+                contador++  
+                div_mensagem.innerHTML += `<img src="http://epocanegocios.globo.com/Revista/Epocanegocios2/foto/0,,41723592,00.jpg alt="""`
+            }
+
+        }
+    }
+</script>

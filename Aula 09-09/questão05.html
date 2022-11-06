@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <
+    Qual o seu salário bruto?: <input id="in_salariobruto"><br>
+
+    <button onclick="inss()">Veja o Desconto de INSS</button><br>
+
+    <button onclick="ir()">Veja o Desconto de IR</button><br>
+
+    <button onclick="sindical()">Veja o Desconto do Sindical</button><br>
+
+    <button onclick="desconto()">Descubra Quanto Receberá</button><br>
+
+    <div id="div_resultadoinss"></div> 
+    <div id="div_resultadoir"></div> 
+    <div id="div_resultadosindical"></div>
+</body>
+</html>
+
+<script>
+    function inss() {
+        var salarioBruto = Number (in_salariobruto.value).toFixed(2)
+        var inss = (salarioBruto * 0.1).toFixed(2)
+        div_resultadoinss.innerHtml = `Valor do seu INSS${inss}`
+    }
+
+    function ir() {
+        var salarioBruto = Number (in_salariobruto.value).toFixed(2)
+        var descontoIR = (salarioBruto * 0.2).toFixed(2)
+        div_resultadoir.innerHtml = `Desconto de IR ${descontoIR}`
+    }
+
+    function sindical() {
+        var salarioBruto = Number (in_salariobruto.value).toFixed(2)
+        var sindical = ((salarioBruto  / 30) * 1).toFixed(2)
+        div_resultadoir.innerHtml = `Desconto do Sindical ${sindical}`
+    }
+    
+    function desconto() {
+        alert(`Apesar de seu bruto ser R$ ${salarioBruto}, após os descontos, você receberá somente R$${(salarioBruto - (inss + descontoIR + sindical))}`)
+    }
+</script>

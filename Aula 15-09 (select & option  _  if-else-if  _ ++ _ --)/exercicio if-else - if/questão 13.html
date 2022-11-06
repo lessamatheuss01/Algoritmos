@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>questão 13</title>
+</head>
+<body>
+    <h2>FINANÇAS</h2>
+    <center>  
+
+        <div id="div_dinheiro"></div>
+        <div id="div_financa"></div>
+        
+        <button onclick="lucrar()">Guardar R$ 5,00</button>
+        <button onclick="gastar()">Gastar R$ 10,00</button>
+    </center>
+</body>
+</html>
+
+<script>
+    var guardar = 5.00
+    var gasto = 10.00
+    var valor = 0.00
+
+    
+    div_dinheiro.innerHTML = `Valor guardado R$ ${valor.toFixed(2)}`
+
+    function lucrar() {
+        valor = valor + guardar
+        div_dinheiro.innerHTML = `Valor guardado R$ ${valor.toFixed(2)}`
+
+        if (valor >= 0) {
+            div_financa.innerHTML = `<div style="color:blue;"> Finanças OK! </div>`
+            if (valor >= 100) {
+                div_financa.innerHTML += `#OSTENTAÇÃO`
+            }
+        }
+    }
+
+    function gastar() {
+        valor = valor - gasto
+        div_dinheiro.innerHTML = `Valor guardado R$ ${valor.toFixed(2)}`
+
+
+        if (valor < 0) {
+            div_financa.innerHTML = `<div style="color:red;"> Finanças em perigo! </div>`
+
+            if (valor <= -20) {
+                div_financa.innerHTML += `Seu nome vai ficar sujo, hein?`
+            }
+        }
+    }
+
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>CALCULADORA DE DESCANÇO SPTECH</h2>
+
+    Meio de transporte <select id="sel_transporte">
+        <option value="">-- SELECIONE --</option>
+        <option value="1">Ônibus</option>
+        <option value="2">Metrô</option>
+        <option value="3">Carro</option>
+        <option value="4">Bicicleta</option>
+        <option value="5">Lotação</option>
+    </select>
+
+    <button onclick="resultado()">Cansaço</button>
+</body>
+</html>
+
+<script>
+        function resultado() {
+        var transporte = sel_transporte.value
+
+        if (transporte =="3" || transporte =="4") {
+            alert("Tá tranquilo...")
+
+        } else if (transporte =="2") {
+            alert(`Um pouco cansado`)
+
+        } else if (transporte =="1" || transporte =="5") {
+            alert("Vish...vive cansado")
+
+        }
+
+    }
+</script>

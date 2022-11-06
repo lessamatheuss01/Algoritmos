@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Qual o nome" id="in_nome">
+    <input placeholder="Quanto o ama" id="in_quanto">
+
+    <button onclick="expressar()">Expressar amor</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function expressar() {
+        var nome = in_nome.value
+        var ama = Number(in_quanto.value)
+        var resultado = 0
+
+        while(resultado < ama ) {
+            resultado++
+            div_resultado.innerHTML += `${resultado} ${nome}, eu te amo! Sempre lembre disso! <br>`
+        }
+    }
+</script>

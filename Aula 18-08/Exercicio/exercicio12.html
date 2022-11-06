@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Peso: <input id="in_peso">
+    Altura: <input id="in_altura"> 
+    <button onclick="imcHomem()">Homem IMC</button>
+    <button onclick="imcMulher()">Mulher IMC</button>
+
+    <div id="div_resultado">
+        Aqui está seu calculo IMC.
+    </div>
+</body>
+</html>
+
+<script>
+     function imcHomem(){
+        div_resultado.innerHTML = `${Number(in_peso.value) / (Number(in_altura.value)*Number(in_altura.value))}`
+    }
+
+    function imcMulher(){
+        div_resultado.innerHTML = `${(Number(in_peso.value) / (Number(in_altura.value)*Number(in_altura.value))) - (Number(in_peso.value) / (Number(in_altura.value)*Number(in_altura.value))) * Number(0.1)}`
+    }
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H2>CARTÃO FIDELIDADE</H2>
+
+    <input placeholder="Quantidade de passagem" id="in_passagem">
+
+    <button onclick="comprar()">Comprar</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function comprar() {
+        var passagem = Number(in_passagem.value)*4.40
+        var desconto3 = (passagem * 0.03).toFixed(2)
+        var desconto5 = (passagem * 0.05).toFixed(2)
+        var desconto7 = (passagem * 0.07).toFixed(2)
+
+        if(passagem >= 8 && passagem <= 50) {
+            alert (`Quantidade inválida para o fidelidade!`)
+        }else if (passagem >= 8 && passagem <= 19) {
+            div_resultado.innerHTML = `Total a pagar ${desconto3}`
+        }else if (passagem >= 20 && passagem <= 49) {
+            div_resultado.innerHTML = `Total a pagar ${desconto5}`
+        }else {
+            div_resultado.innerHTML = `Total a pagar ${desconto7}`
+        }
+    }
+</script>

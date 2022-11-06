@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Peso: <input id="in_peso">
+    Altura: <input id="in_altura"> 
+    <button onclick="imcHomem()">Homem IMC</button>
+    <button onclick="imcMulher()">Mulher IMC</button>
+
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function imcHomem() {
+        var peso = Number(in_peso.value).toFixed(2)
+        var altura = Number(in_altura.value).toFixed(2)
+        var imcHomem = peso / (altura * altura).toFixed(2)
+
+        div_resultado.innerHTML = `O IMC é ${imcHomem}`
+    }
+
+    function imcMulher() {
+        var peso = Number(in_peso.value).toFixed(2)
+        var altura = Number(in_altura.value).toFixed(2)
+        var imcMulher = peso / (altura * altura).toFixed(2)
+        var imcTotal = imcMulher - (altura * altura * 0.1)
+
+        div_resultado.innerHTML = `O IMC é ${imcTotal}`
+    }
+</script>

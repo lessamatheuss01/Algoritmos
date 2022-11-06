@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>questão 11</title>
+</head>
+<body>
+    <h2>Meses do ano</h2>
+    <select id="sel_estacao" onchange="ver_estacao()">
+        <option value="1">Março</option>
+        <option value="1">Abril</option>
+        <option value="1">Maio</option>
+        <option value="2">Junho</option>
+        <option value="2">Julho</option>
+        <option value="2">Agosto</option>
+        <option value="3">Setembro</option>
+        <option value="3">Outubro</option>
+        <option value="3">Novembro</option>
+        <option value="4">Dezembro</option>
+        <option value="4">Janeiro</option>
+        <option value="4">Fevereiro</option>
+    </select>
+        <br>
+        <img src="" id="img_estacao" style="height: 200px;">
+
+        <div id="div_estacao"></div>
+</body>
+</html>
+
+<script>
+     function ver_estacao() {
+        var estacoes = sel_estacao.value
+
+        if (estacoes == '1') {
+            img_estacao.src = `https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2019/03/20/istock-1029169532.jpg`
+            div_estacao.innerHTML = `Outono`
+        } else if (estacoes == '2') {
+            img_estacao.src = `https://thumbs.dreamstime.com/b/feliz-natal-e-cart%C3%A3o-do-ano-novo-feliz-com-c%C3%B3pia-espa%C3%A7o-82233888.jpg`
+            div_estacao.innerHTML = 'Inverno'
+        } else if (estacoes == '3') {
+            img_estacao.src = `https://thumbs.dreamstime.com/b/borboletas-na-primavera-39032667.jpg`
+            div_estacao.innerHTML = 'Primavera'
+        } else if (estacoes == '4') {
+            img_estacao.src = `https://s1.static.brasilescola.uol.com.br/galeria/images/2d28fe1a3b1ed960bca2e3798803c6b5.jpg`
+            div_estacao.innerHTML = 'Verão'
+        }
+    }
+</script>

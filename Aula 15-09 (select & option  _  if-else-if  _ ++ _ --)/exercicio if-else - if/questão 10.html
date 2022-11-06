@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>questão 10</title>
+</head>
+<body>
+    <h2>Banco SPTO</h2>
+
+    Nome: <input id="in_nome"><br>
+    Saldo da conta: <input id="in_saldo"><br>
+
+    <button onclick="conta()">Verificar conta</button>
+    <div id="div_conta"></div>
+</body>
+</html>
+
+<script>
+    function conta() {
+        var nome = in_nome.value
+        var saldo = Number(in_saldo.value)
+        
+        if (saldo < 0) {
+            div_conta.innerHTML = `Com saldo de ${saldo} o cliente ${nome} está com saldo devedor`
+
+        } else if (saldo <= 2000) {
+            div_conta.innerHTML = `Com saldo de ${saldo} o cliente ${nome} está com saldo normal`
+
+        } else if (saldo <= 5000) {
+            div_conta.innerHTML = `Com saldo de ${saldo} o cliente ${nome} está com saldo acima da média`
+   
+        } else {
+            div_conta.innerHTML = `Com saldo de ${saldo} o cliente ${nome} está com perfil de investidor`
+            
+        }
+    }
+</script>

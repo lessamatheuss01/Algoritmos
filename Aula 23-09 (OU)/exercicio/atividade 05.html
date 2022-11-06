@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Sistema de temperatura</h2>
+
+    <input placeholder="Qual a temperatura atual ?" id="in_temperaturaAtual"><br>
+    <button onclick="analisar()">Analisar clima</button>
+</body>
+</html>
+
+<script>
+    function analisar() {
+        var temperaturaA = Number(in_temperaturaAtual.value)
+
+        if(temperaturaA <= 21 || temperaturaA <=24 ){
+            alert ("Alerta de desconforto!")
+        }else if (temperaturaA > 21 || temperaturaA > 24 ){
+            alert ("As pessoas vão ter hipotermia")
+        }else {
+            alert ("As pessoas vão derreter")
+        }
+    }
+</script>

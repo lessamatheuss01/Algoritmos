@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>questão 09</title>
+</head>
+<body>
+    <h2>Economia</h2>
+
+    Qual sua meta de economia? <input id="in_economia"><br>
+    Quanto que você guardou? <input id="in_guardou"><br>
+
+    <button onclick="analisar()">Analisar economia</button>
+
+    <div id="div_calculo"></div>
+</body>
+</html>
+
+<script>
+        function analisar() {
+        var economia = Number(in_economia.value)
+        var guardou = Number(in_guardou.value)
+        var total = economia - guardou
+
+        if (guardou == economia) {
+            div_calculo.innerHTML = `Parabéns, meta alcançada!`
+
+        } else if (guardou > economia) {
+            div_calculo.innerHTML = `Meta ultrapassada em ${total}`
+
+        } else {
+            div_calculo.innerHTML = `Força! Ainda em busca da meta! Falta ${total}`
+
+        }
+
+        }
+</script>

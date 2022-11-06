@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Quantos ônibus precisa pagar" id="in_qtdOnibu"><br>
+    <input placeholder="Quantos trens precisa pegar" id="in_qtdTrem"><br>
+    <input placeholder="Quantos metrôs precisa pagar" id="in_qtdMetro"><br>
+
+    <button onclick="partiu()">#Partiu Trajeto</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function partiu() {
+        var onibus = Number(in_qtdOnibu.value);
+        var trem = Number(in_qtdTrem.value);
+        var metro = Number(in_qtdMetro.value);
+        var contador = 1;
+        var texto = ''
+
+        div_mensagem.innerHTML = ''
+
+        while (contador <= onibus) {
+            if(contador == 2) {
+                texto = 'Começando a Cansar'
+            }else if (contador == 3){
+                texto = 'Já Cansado'
+            }
+            div_mensagem.innerHTML += `<div style="color: red;">Pegando o ${contador}º buzão ${texto}.</div>`
+            contador++
+        }
+        texto = ''
+        contador = 1;
+        while (contador <= trem) {
+            if(contador == 2) {
+                texto = 'Começando a Cansar'
+            }else if (contador == 3){
+                texto = 'Já Cansado'
+            }
+            div_mensagem.innerHTML += `<div style="color: green;">Pegando o ${contador}º trem ${texto}.</div>`
+            contador++
+        }
+        texto = ''
+        contador = 1;
+        while (contador <= metro) {
+            if(contador == 2) {
+                texto = 'Começando a Cansar'
+            }else if (contador == 3){
+                texto = 'Já Cansado'
+            }
+            div_mensagem.innerHTML += `<div style="color: blue;">Pegando o ${contador}º metro ${texto}.</div>`
+            contador++
+        }
+        contador = 1;
+    }
+</script>

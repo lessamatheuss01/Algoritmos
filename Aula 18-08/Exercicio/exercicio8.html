@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome do Aluno <input id="in_nome">
+    Avaliação Continuada <input id="in_continuada">
+    Avaliação Semestral <input id="in_semestral">
+
+    <button onclick="avaliacao()">Resultado</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function avaliacao() {
+        div_resultado.innerHTML = `A médida é ${((Number(in_continuada.value * 0.4 ) + Number(in_semestral.value * 0.6 ) ) / 2)}`
+    }
+</script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Questão 04</h2>
+    Digite Numero1 <input id="in_numero1"><br>
+    Digite Numero2 <input id="in_numero2"><br>
+
+    <button onclick="soma()">Soma</button>
+    <button onclick="diferenca()">Diferença</button>
+    <button onclick="produto()">Produto</button>
+    <button onclick="razao()">Razão</button>
+
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function soma() {
+        var numero1 = Number(in_numero1.value)
+        var numero2 = Number(in_numero2.value)
+        var soma = (numero1 + numero2).toFixed(2)
+        div_resultado.innerHTML = `A soma entre ${numero1} e ${numero2} é ${soma}`
+    }
+
+    function diferenca() {
+        var numero1 = Number(in_numero1.value)
+        var numero2 = Number(in_numero2.value)
+        var diferenca = (numero1 - numero2).toFixed(2)
+        div_resultado.innerHTML = `A diferença entre ${numero1} e ${numero2} é ${diferenca}`
+    }
+
+    function produto() {
+        var numero1 = Number(in_numero1.value)
+        var numero2 = Number(in_numero2.value)
+        var produto = (numero1 * numero2).toFixed(2)
+        div_resultado.innerHTML = `O produto entre ${numero1} e ${numero2} é ${produto}`
+    }
+
+    function razao() {
+        var numero1 = Number(in_numero1.value)
+        var numero2 = Number(in_numero2.value)
+        var razao = (numero1 / numero2).toFixed(2)
+        div_resultado.innerHTML = `A razão entre ${numero1} e ${numero2} é ${razao}`
+    }
+</script>

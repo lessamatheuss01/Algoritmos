@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>PITOLOS</h2>
+
+    <input placeholder="Nome" id="in_nome"><br>
+    <input placeholder="Altura inicial" id="in_inicial"><br>
+    <input placeholder="Altura final" id="in_final"><br>
+    <input placeholder="Altura do candidato" id="in_alturaC">
+
+    <button onclick="cadastro()">Cadastrar</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function cadastro() {
+        var nome = in_nome.value
+        var alturaInicial = Number(in_inicial.value).toFixed(2)
+        var alturaFinal = Number(in_final.value).toFixed(2)
+        var alturaC = Number(in_alturaC.value).toFixed(2)
+
+        if(alturaInicial > 1 && alturaFinal > alturaInicial) {
+            alert("SEGUIR EM FRENTE")
+        }else {
+            alert ("ÃO SEGUIR EM FRENTE")
+        }if (alturaC > alturaInicial && alturaC < alturaFinal){
+            div_resultado.innerHTML = `O candidato ${nome} com altura de ${alturaC} participará do processo de seleção de piloto <br>`
+        }else {
+            div_resultado.innerHTML = `Infelizmente o candidato ${nome} com altura de ${alturaC} não atende os requisitos`
+        }
+
+    }
+</script>

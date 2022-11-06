@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite Numero1 <input id="in_numero1">
+    Digite Numero2 <input id="in_numero2">
+
+    <button onclick="soma()">Soma</button>
+    <button onclick="diferenca()">Diferença</button>
+    <button onclick="produto()">Produto</button>
+    <button onclick="razao()">Razão</button>
+
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+   function soma(){
+
+div_resultado.innerHTML = (`Resultado da soma é ${Number(in_numero1.value) + Number(in_numero2.value) }`) 
+}
+
+function diferenca(){
+
+div_resultado.innerHTML = (`Resultado da diferença é ${Number(in_numero1.value) - Number(in_numero2.value)}`) 
+}
+
+function produto(){
+
+div_resultado.innerHTML = (`Resultado do produto é ${Number(in_numero1.value) * Number(in_numero2.value)}`)
+}
+
+function razao(){
+
+div_resultado.innerHTML = (`Resultado da razão é ${Number(in_numero1.value) / Number(in_numero2.value)}`)
+}
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Qual sua estação do ano ?</h2>    
+
+    <select id="sel_estacao" onchange="ver_estacao()">
+        <option value="">- Selecione a estação-</option>
+        <option value="https://www.brasileiraspelomundo.com/wp-content/uploads/2018/04/Webp.net-resizeimage-1.jpg">Primavera</option>
+        <option value="https://catracalivre.com.br/wp-content/uploads/2020/10/unnamed-12.jpg">Verão</option>
+        <option value="https://s3.static.brasilescola.uol.com.br/be/2021/03/outono.jpg">Outono</option>
+        <option value="https://s3.static.brasilescola.uol.com.br/img/2019/11/inverno-hemisferio-norte.jpg">Inverno</option>
+        
+    </select>
+    <br>
+    <img src="" id="img_estacao" style="height: 200px;">
+</body>
+</html>
+
+<script>
+    function ver_estacao() {
+        img_estacao.src = sel_estacao.value
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="curto()">Curto 3 e 5!</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function curto() {
+        var contador = 1;
+
+        while(contador <= 100){
+            var multiplo3 = contador % 3 == 0
+            var multiplo5 = contador % 5 == 0
+
+            if(multiplo3 && multiplo5) {
+                div_mensagem.innerHTML += `É TRI! É PENTA! <br>`
+            }else if(multiplo3){
+                div_mensagem.innerHTML += `É TRI! <br>`
+            }else if(multiplo5) {
+                div_mensagem.innerHTML += `É PENTA! <br>`
+            }else {
+                div_mensagem.innerHTML += `${contador} <br>`
+            }
+            contador++
+        }
+    }
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Casamento</h2>
+
+    <input placeholder="Qual sua idade (anos)" id="in_ano">
+    <input placeholder="Qual quantidade de kilo (kg)" id="in_trigo">
+    <input placeholder="Faltas (dias)" id="in_falta">
+
+    <button onclick="verificar()">Deu match</button>
+
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function verificar() {
+        var ano = Number(in_ano.value)
+        var trigo = Number(in_trigo.value)
+        var falta = Number(in_falta.value)
+
+        if (ano >= 5 && trigo >= 300 && falta <= 5) {
+            div_resultado.innerHTML = `Minha filha será sua <br> <img src="https://casamento.biz/wp-content/uploads/2019/08/Fotografias-de-Noivas.jpg">`
+
+        } else {
+            div_resultado.innerHTML = `Deu ruim, trabalhe mais dois anos <br> <img src="https://noticiasdatv.uol.com.br/media/_versions/everybody-hates-chris-julius-dia-dos-pais_fixed_large.jpg">`
+
+        }
+    }  
+    
+</script>
+
